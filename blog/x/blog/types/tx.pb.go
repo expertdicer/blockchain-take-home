@@ -420,6 +420,198 @@ func (m *MsgDeletePostResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgDeletePostResponse proto.InternalMessageInfo
 
+type MsgGrantPermission struct {
+	Granter string `protobuf:"bytes,1,opt,name=granter,proto3" json:"granter,omitempty"`
+	Grantee string `protobuf:"bytes,2,opt,name=grantee,proto3" json:"grantee,omitempty"`
+	Id      uint64 `protobuf:"varint,3,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *MsgGrantPermission) Reset()         { *m = MsgGrantPermission{} }
+func (m *MsgGrantPermission) String() string { return proto.CompactTextString(m) }
+func (*MsgGrantPermission) ProtoMessage()    {}
+func (*MsgGrantPermission) Descriptor() ([]byte, []int) {
+	return fileDescriptor_35732e905b6dd4b9, []int{8}
+}
+func (m *MsgGrantPermission) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgGrantPermission) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgGrantPermission.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgGrantPermission) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgGrantPermission.Merge(m, src)
+}
+func (m *MsgGrantPermission) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgGrantPermission) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgGrantPermission.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgGrantPermission proto.InternalMessageInfo
+
+func (m *MsgGrantPermission) GetGranter() string {
+	if m != nil {
+		return m.Granter
+	}
+	return ""
+}
+
+func (m *MsgGrantPermission) GetGrantee() string {
+	if m != nil {
+		return m.Grantee
+	}
+	return ""
+}
+
+func (m *MsgGrantPermission) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type MsgGrantPermissionResponse struct {
+}
+
+func (m *MsgGrantPermissionResponse) Reset()         { *m = MsgGrantPermissionResponse{} }
+func (m *MsgGrantPermissionResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgGrantPermissionResponse) ProtoMessage()    {}
+func (*MsgGrantPermissionResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_35732e905b6dd4b9, []int{9}
+}
+func (m *MsgGrantPermissionResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgGrantPermissionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgGrantPermissionResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgGrantPermissionResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgGrantPermissionResponse.Merge(m, src)
+}
+func (m *MsgGrantPermissionResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgGrantPermissionResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgGrantPermissionResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgGrantPermissionResponse proto.InternalMessageInfo
+
+type MsgRevokePermission struct {
+	Granter string `protobuf:"bytes,1,opt,name=granter,proto3" json:"granter,omitempty"`
+	Grantee string `protobuf:"bytes,2,opt,name=grantee,proto3" json:"grantee,omitempty"`
+	Id      uint64 `protobuf:"varint,3,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *MsgRevokePermission) Reset()         { *m = MsgRevokePermission{} }
+func (m *MsgRevokePermission) String() string { return proto.CompactTextString(m) }
+func (*MsgRevokePermission) ProtoMessage()    {}
+func (*MsgRevokePermission) Descriptor() ([]byte, []int) {
+	return fileDescriptor_35732e905b6dd4b9, []int{10}
+}
+func (m *MsgRevokePermission) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgRevokePermission) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgRevokePermission.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgRevokePermission) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgRevokePermission.Merge(m, src)
+}
+func (m *MsgRevokePermission) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgRevokePermission) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgRevokePermission.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgRevokePermission proto.InternalMessageInfo
+
+func (m *MsgRevokePermission) GetGranter() string {
+	if m != nil {
+		return m.Granter
+	}
+	return ""
+}
+
+func (m *MsgRevokePermission) GetGrantee() string {
+	if m != nil {
+		return m.Grantee
+	}
+	return ""
+}
+
+func (m *MsgRevokePermission) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type MsgRevokePermissionResponse struct {
+}
+
+func (m *MsgRevokePermissionResponse) Reset()         { *m = MsgRevokePermissionResponse{} }
+func (m *MsgRevokePermissionResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgRevokePermissionResponse) ProtoMessage()    {}
+func (*MsgRevokePermissionResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_35732e905b6dd4b9, []int{11}
+}
+func (m *MsgRevokePermissionResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgRevokePermissionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgRevokePermissionResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgRevokePermissionResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgRevokePermissionResponse.Merge(m, src)
+}
+func (m *MsgRevokePermissionResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgRevokePermissionResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgRevokePermissionResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgRevokePermissionResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgUpdateParams)(nil), "blog.blog.MsgUpdateParams")
 	proto.RegisterType((*MsgUpdateParamsResponse)(nil), "blog.blog.MsgUpdateParamsResponse")
@@ -429,43 +621,52 @@ func init() {
 	proto.RegisterType((*MsgUpdatePostResponse)(nil), "blog.blog.MsgUpdatePostResponse")
 	proto.RegisterType((*MsgDeletePost)(nil), "blog.blog.MsgDeletePost")
 	proto.RegisterType((*MsgDeletePostResponse)(nil), "blog.blog.MsgDeletePostResponse")
+	proto.RegisterType((*MsgGrantPermission)(nil), "blog.blog.MsgGrantPermission")
+	proto.RegisterType((*MsgGrantPermissionResponse)(nil), "blog.blog.MsgGrantPermissionResponse")
+	proto.RegisterType((*MsgRevokePermission)(nil), "blog.blog.MsgRevokePermission")
+	proto.RegisterType((*MsgRevokePermissionResponse)(nil), "blog.blog.MsgRevokePermissionResponse")
 }
 
 func init() { proto.RegisterFile("blog/blog/tx.proto", fileDescriptor_35732e905b6dd4b9) }
 
 var fileDescriptor_35732e905b6dd4b9 = []byte{
-	// 482 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x53, 0xbf, 0x8f, 0xd3, 0x30,
-	0x14, 0x8e, 0x73, 0xbd, 0x43, 0x31, 0x07, 0xa8, 0x56, 0xa1, 0xb9, 0x20, 0x85, 0x2a, 0x0b, 0xa7,
-	0x22, 0x12, 0x71, 0x20, 0x86, 0xdb, 0x28, 0x48, 0xb0, 0x14, 0xa1, 0x20, 0x16, 0x16, 0x94, 0x5e,
-	0x2c, 0x13, 0xa9, 0xa9, 0x43, 0x6c, 0xd0, 0x75, 0x43, 0x8c, 0x4c, 0xfc, 0x19, 0x6c, 0x74, 0x60,
-	0xe2, 0x2f, 0xb8, 0xf1, 0xc4, 0xc4, 0x84, 0x50, 0x3b, 0xf4, 0xdf, 0x40, 0xfe, 0x91, 0xe6, 0x47,
-	0x5b, 0x58, 0x6e, 0x71, 0xf2, 0xde, 0xf7, 0xfc, 0x7d, 0x9f, 0x9f, 0xfd, 0x20, 0x1a, 0x8d, 0x29,
-	0x09, 0xe4, 0xc2, 0x4f, 0xfd, 0x2c, 0xa7, 0x9c, 0x22, 0x4b, 0x84, 0xbe, 0x58, 0x9c, 0x76, 0x94,
-	0x26, 0x13, 0x1a, 0xc8, 0x55, 0xa1, 0x4e, 0xf7, 0x84, 0xb2, 0x94, 0xb2, 0x20, 0x65, 0x24, 0xf8,
-	0x70, 0x4f, 0x7c, 0x34, 0x70, 0xa0, 0x80, 0x37, 0x32, 0x0a, 0x54, 0xa0, 0xa1, 0x0e, 0xa1, 0x84,
-	0xaa, 0xbc, 0xf8, 0xd3, 0xd9, 0x1b, 0xa5, 0x76, 0x16, 0xe5, 0x51, 0xaa, 0xab, 0xbd, 0x6f, 0x00,
-	0x5e, 0x1b, 0x32, 0xf2, 0x2a, 0x8b, 0x23, 0x8e, 0x5f, 0x48, 0x04, 0x3d, 0x84, 0x56, 0xf4, 0x9e,
-	0xbf, 0xa5, 0x79, 0xc2, 0xa7, 0x36, 0xe8, 0x81, 0x43, 0x6b, 0x60, 0xff, 0xfc, 0x7e, 0xb7, 0xa3,
-	0x65, 0x1e, 0xc5, 0x71, 0x8e, 0x19, 0x7b, 0xc9, 0xf3, 0x64, 0x42, 0xc2, 0xb2, 0x14, 0x3d, 0x80,
-	0x7b, 0x8a, 0xdb, 0x36, 0x7b, 0xe0, 0xf0, 0xf2, 0x51, 0xdb, 0x5f, 0x1d, 0xce, 0x57, 0xd4, 0x03,
-	0xeb, 0xec, 0xf7, 0x2d, 0xe3, 0xeb, 0x72, 0xd6, 0x07, 0xa1, 0xae, 0x3d, 0xf6, 0x3f, 0x2d, 0x67,
-	0xfd, 0x92, 0xe5, 0xf3, 0x72, 0xd6, 0xbf, 0x29, 0x7d, 0x9e, 0x2a, 0xbb, 0x0d, 0x77, 0xde, 0x01,
-	0xec, 0x36, 0x52, 0x21, 0x66, 0x19, 0x9d, 0x30, 0xec, 0x45, 0xf0, 0xca, 0x90, 0x91, 0xc7, 0x39,
-	0x16, 0x10, 0x65, 0x1c, 0xd9, 0xf0, 0xd2, 0x89, 0x88, 0x68, 0xae, 0xce, 0x11, 0x16, 0x21, 0xea,
-	0xc0, 0x5d, 0x9e, 0xf0, 0x31, 0x96, 0x56, 0xad, 0x50, 0x05, 0x08, 0xc1, 0xd6, 0x88, 0xc6, 0x53,
-	0x7b, 0x47, 0x26, 0xe5, 0xff, 0xf1, 0xbe, 0xf0, 0x57, 0xec, 0xf3, 0x6e, 0xc3, 0xeb, 0x35, 0x89,
-	0x42, 0x1b, 0x5d, 0x85, 0x66, 0x12, 0x4b, 0x95, 0x56, 0x68, 0x26, 0xb1, 0xf7, 0x4e, 0x7a, 0xd1,
-	0x36, 0x2f, 0xc8, 0x8b, 0x16, 0x69, 0x15, 0x22, 0x0d, 0x6f, 0x5d, 0xe9, 0xad, 0x94, 0x5c, 0xf5,
-	0xe5, 0xa9, 0xf4, 0xf2, 0x04, 0x8f, 0xf1, 0x7f, 0xbd, 0x28, 0x05, 0xf3, 0x9f, 0x0a, 0x25, 0x51,
-	0xa1, 0x70, 0xf4, 0xc3, 0x84, 0x3b, 0x43, 0x46, 0xd0, 0x73, 0xb8, 0x5f, 0x7b, 0x4a, 0x4e, 0xe5,
-	0x09, 0x34, 0x6e, 0xcd, 0xf1, 0xb6, 0x63, 0xab, 0xae, 0x3e, 0x83, 0xb0, 0x7a, 0x9d, 0xf5, 0x1d,
-	0x25, 0xe2, 0xf4, 0xb6, 0x21, 0x55, 0xa6, 0xea, 0x65, 0x6c, 0xd4, 0xde, 0xc0, 0xb4, 0xde, 0x4d,
-	0xc1, 0x54, 0x6d, 0x65, 0xbd, 0xbe, 0x44, 0x9a, 0x4c, 0xeb, 0x5d, 0x73, 0x76, 0x3f, 0x8a, 0x49,
-	0x18, 0xdc, 0x39, 0x9b, 0xbb, 0xe0, 0x7c, 0xee, 0x82, 0x3f, 0x73, 0x17, 0x7c, 0x59, 0xb8, 0xc6,
-	0xf9, 0xc2, 0x35, 0x7e, 0x2d, 0x5c, 0xe3, 0x75, 0xbb, 0x3a, 0x08, 0x7c, 0x9a, 0x61, 0x36, 0xda,
-	0x93, 0x73, 0x7b, 0xff, 0x6f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x3d, 0xb5, 0xb0, 0x69, 0x4d, 0x04,
-	0x00, 0x00,
+	// 576 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x54, 0xcf, 0x6f, 0x12, 0x41,
+	0x18, 0x65, 0x81, 0xd6, 0xf0, 0x59, 0xad, 0x8c, 0x28, 0x74, 0x6b, 0x57, 0xb2, 0x89, 0xda, 0x60,
+	0x84, 0x58, 0x8d, 0x87, 0xde, 0x44, 0x93, 0x7a, 0xc1, 0x34, 0x6b, 0x8c, 0x49, 0x2f, 0x66, 0xe9,
+	0x8e, 0xe3, 0x46, 0x60, 0x70, 0x67, 0x6c, 0xca, 0xcd, 0x78, 0xf4, 0xe4, 0x9f, 0xe1, 0x4d, 0x0e,
+	0xfe, 0x11, 0x3d, 0x36, 0x9e, 0x3c, 0x19, 0x03, 0x07, 0x8e, 0xfe, 0x0b, 0x66, 0x7e, 0xec, 0x4f,
+	0x28, 0x5e, 0xec, 0x65, 0xd8, 0xef, 0x7b, 0xf3, 0xbd, 0xf7, 0x86, 0xbc, 0x19, 0x40, 0xdd, 0x1e,
+	0x25, 0x2d, 0xb9, 0xf0, 0xe3, 0xe6, 0x30, 0xa0, 0x9c, 0xa2, 0x92, 0x28, 0x9b, 0x62, 0x31, 0xcb,
+	0x6e, 0xdf, 0x1f, 0xd0, 0x96, 0x5c, 0x15, 0x6a, 0x56, 0x0f, 0x29, 0xeb, 0x53, 0xd6, 0xea, 0x33,
+	0xd2, 0x3a, 0xba, 0x2f, 0x7e, 0x34, 0xb0, 0xa1, 0x80, 0xd7, 0xb2, 0x6a, 0xa9, 0x42, 0x43, 0x15,
+	0x42, 0x09, 0x55, 0x7d, 0xf1, 0xa5, 0xbb, 0xd7, 0x63, 0xed, 0xa1, 0x1b, 0xb8, 0x7d, 0xbd, 0xdb,
+	0xfe, 0x66, 0xc0, 0x7a, 0x87, 0x91, 0x97, 0x43, 0xcf, 0xe5, 0x78, 0x5f, 0x22, 0xe8, 0x11, 0x94,
+	0xdc, 0x0f, 0xfc, 0x2d, 0x0d, 0x7c, 0x3e, 0xaa, 0x19, 0x75, 0x63, 0xbb, 0xd4, 0xae, 0xfd, 0xf8,
+	0x7e, 0xaf, 0xa2, 0x65, 0x1e, 0x7b, 0x5e, 0x80, 0x19, 0x7b, 0xc1, 0x03, 0x7f, 0x40, 0x9c, 0x78,
+	0x2b, 0x7a, 0x08, 0xab, 0x8a, 0xbb, 0x96, 0xaf, 0x1b, 0xdb, 0x17, 0x77, 0xca, 0xcd, 0xe8, 0x70,
+	0x4d, 0x45, 0xdd, 0x2e, 0x9d, 0xfc, 0xba, 0x99, 0xfb, 0x3a, 0x1b, 0x37, 0x0c, 0x47, 0xef, 0xdd,
+	0x6d, 0x7e, 0x9a, 0x8d, 0x1b, 0x31, 0xcb, 0xe7, 0xd9, 0xb8, 0xb1, 0x29, 0x7d, 0x1e, 0x2b, 0xbb,
+	0x19, 0x77, 0xf6, 0x06, 0x54, 0x33, 0x2d, 0x07, 0xb3, 0x21, 0x1d, 0x30, 0x6c, 0xbb, 0x70, 0xa9,
+	0xc3, 0xc8, 0x93, 0x00, 0x0b, 0x88, 0x32, 0x8e, 0x6a, 0x70, 0xe1, 0x50, 0x54, 0x34, 0x50, 0xe7,
+	0x70, 0xc2, 0x12, 0x55, 0x60, 0x85, 0xfb, 0xbc, 0x87, 0xa5, 0xd5, 0x92, 0xa3, 0x0a, 0x84, 0xa0,
+	0xd8, 0xa5, 0xde, 0xa8, 0x56, 0x90, 0x4d, 0xf9, 0xbd, 0xbb, 0x26, 0xfc, 0x85, 0x73, 0xf6, 0x1d,
+	0xb8, 0x96, 0x92, 0x08, 0xb5, 0xd1, 0x65, 0xc8, 0xfb, 0x9e, 0x54, 0x29, 0x3a, 0x79, 0xdf, 0xb3,
+	0xdf, 0x4b, 0x2f, 0xda, 0xe6, 0x7f, 0xf2, 0xa2, 0x45, 0x8a, 0xa1, 0x48, 0xc6, 0x5b, 0x55, 0x7a,
+	0x8b, 0x25, 0xa3, 0xff, 0x65, 0x4f, 0x7a, 0x79, 0x8a, 0x7b, 0xf8, 0x9f, 0x5e, 0x94, 0x42, 0x7e,
+	0xa9, 0x42, 0x4c, 0x14, 0x29, 0xbc, 0x01, 0xd4, 0x61, 0x64, 0x2f, 0x70, 0x07, 0x7c, 0x1f, 0x07,
+	0x7d, 0x9f, 0x31, 0x9f, 0x0e, 0x84, 0x0c, 0x11, 0x2d, 0x1c, 0xc9, 0xe8, 0x32, 0x46, 0xc2, 0x43,
+	0x87, 0xa5, 0x36, 0x50, 0xc8, 0x18, 0xd0, 0x73, 0xf6, 0x0d, 0x30, 0xe7, 0x75, 0x22, 0x17, 0x04,
+	0xae, 0x76, 0x18, 0x71, 0xf0, 0x11, 0x7d, 0x87, 0xcf, 0xd5, 0xc6, 0x16, 0x6c, 0x2e, 0x10, 0x0a,
+	0x7d, 0xec, 0xfc, 0x29, 0x40, 0xa1, 0xc3, 0x08, 0x7a, 0x0e, 0x6b, 0xa9, 0x8b, 0x65, 0x26, 0x2e,
+	0x44, 0x26, 0xc3, 0xa6, 0x7d, 0x36, 0x16, 0x65, 0xec, 0x19, 0x40, 0x32, 0xdc, 0xe9, 0x89, 0x18,
+	0x31, 0xeb, 0x67, 0x21, 0x49, 0xa6, 0x64, 0x34, 0x17, 0x6a, 0x2f, 0x60, 0x9a, 0xcf, 0x96, 0x60,
+	0x4a, 0x06, 0x2b, 0xbd, 0x3f, 0x46, 0xb2, 0x4c, 0xf3, 0x19, 0x42, 0xaf, 0x60, 0x3d, 0x1b, 0xa0,
+	0xad, 0xf4, 0x50, 0x06, 0x36, 0x6f, 0x2d, 0x85, 0x23, 0xe2, 0x03, 0xb8, 0x32, 0x97, 0x09, 0x2b,
+	0x3d, 0x9a, 0xc5, 0xcd, 0xdb, 0xcb, 0xf1, 0x90, 0xdb, 0x5c, 0xf9, 0x28, 0x1e, 0xb3, 0xf6, 0xdd,
+	0x93, 0x89, 0x65, 0x9c, 0x4e, 0x2c, 0xe3, 0xf7, 0xc4, 0x32, 0xbe, 0x4c, 0xad, 0xdc, 0xe9, 0xd4,
+	0xca, 0xfd, 0x9c, 0x5a, 0xb9, 0x83, 0x72, 0xf2, 0x2d, 0xe3, 0xa3, 0x21, 0x66, 0xdd, 0x55, 0xf9,
+	0xf4, 0x3e, 0xf8, 0x1b, 0x00, 0x00, 0xff, 0xff, 0x2b, 0xeb, 0xc1, 0x4a, 0x10, 0x06, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -486,6 +687,8 @@ type MsgClient interface {
 	CreatePost(ctx context.Context, in *MsgCreatePost, opts ...grpc.CallOption) (*MsgCreatePostResponse, error)
 	UpdatePost(ctx context.Context, in *MsgUpdatePost, opts ...grpc.CallOption) (*MsgUpdatePostResponse, error)
 	DeletePost(ctx context.Context, in *MsgDeletePost, opts ...grpc.CallOption) (*MsgDeletePostResponse, error)
+	GrantPermission(ctx context.Context, in *MsgGrantPermission, opts ...grpc.CallOption) (*MsgGrantPermissionResponse, error)
+	RevokePermission(ctx context.Context, in *MsgRevokePermission, opts ...grpc.CallOption) (*MsgRevokePermissionResponse, error)
 }
 
 type msgClient struct {
@@ -532,6 +735,24 @@ func (c *msgClient) DeletePost(ctx context.Context, in *MsgDeletePost, opts ...g
 	return out, nil
 }
 
+func (c *msgClient) GrantPermission(ctx context.Context, in *MsgGrantPermission, opts ...grpc.CallOption) (*MsgGrantPermissionResponse, error) {
+	out := new(MsgGrantPermissionResponse)
+	err := c.cc.Invoke(ctx, "/blog.blog.Msg/GrantPermission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) RevokePermission(ctx context.Context, in *MsgRevokePermission, opts ...grpc.CallOption) (*MsgRevokePermissionResponse, error) {
+	out := new(MsgRevokePermissionResponse)
+	err := c.cc.Invoke(ctx, "/blog.blog.Msg/RevokePermission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
@@ -540,6 +761,8 @@ type MsgServer interface {
 	CreatePost(context.Context, *MsgCreatePost) (*MsgCreatePostResponse, error)
 	UpdatePost(context.Context, *MsgUpdatePost) (*MsgUpdatePostResponse, error)
 	DeletePost(context.Context, *MsgDeletePost) (*MsgDeletePostResponse, error)
+	GrantPermission(context.Context, *MsgGrantPermission) (*MsgGrantPermissionResponse, error)
+	RevokePermission(context.Context, *MsgRevokePermission) (*MsgRevokePermissionResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -557,6 +780,12 @@ func (*UnimplementedMsgServer) UpdatePost(ctx context.Context, req *MsgUpdatePos
 }
 func (*UnimplementedMsgServer) DeletePost(ctx context.Context, req *MsgDeletePost) (*MsgDeletePostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePost not implemented")
+}
+func (*UnimplementedMsgServer) GrantPermission(ctx context.Context, req *MsgGrantPermission) (*MsgGrantPermissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GrantPermission not implemented")
+}
+func (*UnimplementedMsgServer) RevokePermission(ctx context.Context, req *MsgRevokePermission) (*MsgRevokePermissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RevokePermission not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -635,7 +864,42 @@ func _Msg_DeletePost_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
-var Msg_serviceDesc = _Msg_serviceDesc
+func _Msg_GrantPermission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgGrantPermission)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).GrantPermission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blog.blog.Msg/GrantPermission",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).GrantPermission(ctx, req.(*MsgGrantPermission))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_RevokePermission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgRevokePermission)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).RevokePermission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/blog.blog.Msg/RevokePermission",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).RevokePermission(ctx, req.(*MsgRevokePermission))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "blog.blog.Msg",
 	HandlerType: (*MsgServer)(nil),
@@ -655,6 +919,14 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeletePost",
 			Handler:    _Msg_DeletePost_Handler,
+		},
+		{
+			MethodName: "GrantPermission",
+			Handler:    _Msg_GrantPermission_Handler,
+		},
+		{
+			MethodName: "RevokePermission",
+			Handler:    _Msg_RevokePermission_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -926,6 +1198,136 @@ func (m *MsgDeletePostResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgGrantPermission) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgGrantPermission) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgGrantPermission) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x18
+	}
+	if len(m.Grantee) > 0 {
+		i -= len(m.Grantee)
+		copy(dAtA[i:], m.Grantee)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Grantee)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Granter) > 0 {
+		i -= len(m.Granter)
+		copy(dAtA[i:], m.Granter)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Granter)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgGrantPermissionResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgGrantPermissionResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgGrantPermissionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgRevokePermission) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgRevokePermission) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgRevokePermission) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x18
+	}
+	if len(m.Grantee) > 0 {
+		i -= len(m.Grantee)
+		copy(dAtA[i:], m.Grantee)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Grantee)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Granter) > 0 {
+		i -= len(m.Granter)
+		copy(dAtA[i:], m.Granter)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Granter)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgRevokePermissionResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgRevokePermissionResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgRevokePermissionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -1044,6 +1446,64 @@ func (m *MsgDeletePost) Size() (n int) {
 }
 
 func (m *MsgDeletePostResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgGrantPermission) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Granter)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Grantee)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Id != 0 {
+		n += 1 + sovTx(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *MsgGrantPermissionResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgRevokePermission) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Granter)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Grantee)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Id != 0 {
+		n += 1 + sovTx(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *MsgRevokePermissionResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1781,6 +2241,372 @@ func (m *MsgDeletePostResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgDeletePostResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgGrantPermission) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgGrantPermission: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgGrantPermission: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Granter", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Granter = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Grantee", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Grantee = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgGrantPermissionResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgGrantPermissionResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgGrantPermissionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgRevokePermission) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgRevokePermission: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgRevokePermission: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Granter", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Granter = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Grantee", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Grantee = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgRevokePermissionResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgRevokePermissionResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgRevokePermissionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

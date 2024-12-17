@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "blog/blog/params.proto";
 import "blog/blog/post.proto";
+import "blog/blog/grant.proto";
 
 option go_package = "blog/x/blog/types";
 
@@ -27,6 +28,16 @@ service Query {
   // Queries a list of ListPost items.
   rpc ListPost(QueryListPostRequest) returns (QueryListPostResponse) {
     option (google.api.http).get = "/blog/blog/list_post";
+  }
+
+  // Queries if a grantee is granted the permission to modify a blog.
+  rpc IsGranted(QueryGrantRequest) returns (QueryGrantResponse) {
+    option (google.api.http).get = "/blog/blog/grant";
+  }
+
+  // Queries if a grantee is granted the permission to modify a blog.
+  rpc AllGrant(QueryAllGrantRequest) returns (QueryAllGrantResponse) {
+    option (google.api.http).get = "/blog/blog/all_grant";
   }
 }
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -52,5 +63,24 @@ message QueryListPostRequest {
 
 message QueryListPostResponse {
   repeated Post post = 1 [ (gogoproto.nullable) = false ];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGrantRequest {
+  string grantee = 1;
+  uint64 id = 2;
+}
+
+message QueryGrantResponse {
+  bool is_granted = 1;
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryAllGrantRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllGrantResponse {
+  repeated Grant grant = 1 [ (gogoproto.nullable) = false ];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }

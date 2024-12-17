@@ -31,6 +31,20 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{},
 				},
 
+				{
+					RpcMethod:      "IsGranted",
+					Use:            "is-granted [grantee] [id]",
+					Short:          "Query is-granted",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "grantee"} , {ProtoField: "id"}},
+				},
+
+				{
+					RpcMethod:      "AllGrant",
+					Use:            "all-grant",
+					Short:          "Query all-grant",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -59,6 +73,18 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:            "delete-post [id]",
 					Short:          "Send a delete-post tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "GrantPermission",
+					Use:            "grant-permission [grantee] [id]",
+					Short:          "Send a grant-permission tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "grantee"}, {ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "RevokePermission",
+					Use:            "revoke-permission [grantee] [id]",
+					Short:          "Send a revoke-permission tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "grantee"}, {ProtoField: "id"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},

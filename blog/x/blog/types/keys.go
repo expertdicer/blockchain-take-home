@@ -21,6 +21,8 @@ var (
 
 	// This key will be used to keep track of the ID of the latest post added to the store.
 	PostCountKey = "Post/count/"
+
+	GrantKey = "Grant/"
 )
 
 func KeyPrefix(p string) []byte {

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package blog.blog;
+
+option go_package = "blog/x/blog/types";
+
+import "google/protobuf/timestamp.proto";
+
+message Grant {
+  string granter = 1; 
+  repeated string grantee = 2; 
+  uint64 post_id = 3; 
+}

@@ -19,9 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName   = "/blog.blog.Query/Params"
-	Query_ShowPost_FullMethodName = "/blog.blog.Query/ShowPost"
-	Query_ListPost_FullMethodName = "/blog.blog.Query/ListPost"
+	Query_Params_FullMethodName    = "/blog.blog.Query/Params"
+	Query_ShowPost_FullMethodName  = "/blog.blog.Query/ShowPost"
+	Query_ListPost_FullMethodName  = "/blog.blog.Query/ListPost"
+	Query_IsGranted_FullMethodName = "/blog.blog.Query/IsGranted"
+	Query_AllGrant_FullMethodName  = "/blog.blog.Query/AllGrant"
 )
 
 // QueryClient is the client API for Query service.
@@ -34,6 +36,10 @@ type QueryClient interface {
 	ShowPost(ctx context.Context, in *QueryShowPostRequest, opts ...grpc.CallOption) (*QueryShowPostResponse, error)
 	// Queries a list of ListPost items.
 	ListPost(ctx context.Context, in *QueryListPostRequest, opts ...grpc.CallOption) (*QueryListPostResponse, error)
+	// Queries if a grantee is granted the permission to modify a blog.
+	IsGranted(ctx context.Context, in *QueryGrantRequest, opts ...grpc.CallOption) (*QueryGrantResponse, error)
+	// Queries if a grantee is granted the permission to modify a blog.
+	AllGrant(ctx context.Context, in *QueryAllGrantRequest, opts ...grpc.CallOption) (*QueryAllGrantResponse, error)
 }
 
 type queryClient struct {
@@ -71,6 +77,24 @@ func (c *queryClient) ListPost(ctx context.Context, in *QueryListPostRequest, op
 	return out, nil
 }
 
+func (c *queryClient) IsGranted(ctx context.Context, in *QueryGrantRequest, opts ...grpc.CallOption) (*QueryGrantResponse, error) {
+	out := new(QueryGrantResponse)
+	err := c.cc.Invoke(ctx, Query_IsGranted_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) AllGrant(ctx context.Context, in *QueryAllGrantRequest, opts ...grpc.CallOption) (*QueryAllGrantResponse, error) {
+	out := new(QueryAllGrantResponse)
+	err := c.cc.Invoke(ctx, Query_AllGrant_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 // All implementations must embed UnimplementedQueryServer
 // for forward compatibility
@@ -81,6 +105,10 @@ type QueryServer interface {
 	ShowPost(context.Context, *QueryShowPostRequest) (*QueryShowPostResponse, error)
 	// Queries a list of ListPost items.
 	ListPost(context.Context, *QueryListPostRequest) (*QueryListPostResponse, error)
+	// Queries if a grantee is granted the permission to modify a blog.
+	IsGranted(context.Context, *QueryGrantRequest) (*QueryGrantResponse, error)
+	// Queries if a grantee is granted the permission to modify a blog.
+	AllGrant(context.Context, *QueryAllGrantRequest) (*QueryAllGrantResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -96,6 +124,12 @@ func (UnimplementedQueryServer) ShowPost(context.Context, *QueryShowPostRequest)
 }
 func (UnimplementedQueryServer) ListPost(context.Context, *QueryListPostRequest) (*QueryListPostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListPost not implemented")
+}
+func (UnimplementedQueryServer) IsGranted(context.Context, *QueryGrantRequest) (*QueryGrantResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IsGranted not implemented")
+}
+func (UnimplementedQueryServer) AllGrant(context.Context, *QueryAllGrantRequest) (*QueryAllGrantResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AllGrant not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}
 
@@ -164,6 +198,42 @@ func _Query_ListPost_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_IsGranted_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).IsGranted(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_IsGranted_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).IsGranted(ctx, req.(*QueryGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_AllGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).AllGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_AllGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).AllGrant(ctx, req.(*QueryAllGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Query_ServiceDesc is the grpc.ServiceDesc for Query service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -182,6 +252,14 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListPost",
 			Handler:    _Query_ListPost_Handler,
+		},
+		{
+			MethodName: "IsGranted",
+			Handler:    _Query_IsGranted_Handler,
+		},
+		{
+			MethodName: "AllGrant",
+			Handler:    _Query_AllGrant_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

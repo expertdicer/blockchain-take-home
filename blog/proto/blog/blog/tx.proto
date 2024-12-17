@@ -20,6 +20,8 @@ service Msg {
   rpc CreatePost   (MsgCreatePost  ) returns (MsgCreatePostResponse  );
   rpc UpdatePost   (MsgUpdatePost  ) returns (MsgUpdatePostResponse  );
   rpc DeletePost   (MsgDeletePost  ) returns (MsgDeletePostResponse  );
+  rpc GrantPermission   (MsgGrantPermission       ) returns (MsgGrantPermissionResponse       );
+  rpc RevokePermission  (MsgRevokePermission       ) returns (MsgRevokePermissionResponse      );
 }
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
@@ -68,3 +70,20 @@ message MsgDeletePost {
 
 message MsgDeletePostResponse {}
 
+message MsgGrantPermission {
+  option (cosmos.msg.v1.signer) = "granter";
+  string granter = 1;
+  string grantee = 2;
+  uint64 id      = 3;
+}
+
+message MsgGrantPermissionResponse {}
+
+message MsgRevokePermission {
+  option (cosmos.msg.v1.signer) = "granter";
+  string granter = 1;
+  string grantee = 2;
+  uint64 id      = 3;
+}
+
+message MsgRevokePermissionResponse {}
